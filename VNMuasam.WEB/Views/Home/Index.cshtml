@@ -1,0 +1,11 @@
+﻿@using VNMuasam.Business.DTO;
+    @{
+        ViewBag.Title = "Home Page";
+        var LstUser = (List<UserRes>)ViewBag.LstUser;
+    }
+<ul>
+    @foreach (var item in LstUser.Where(x=>x.Username!=null))
+    {
+        <li>@item.Username - @item.FullName</li>
+    }
+</ul>
