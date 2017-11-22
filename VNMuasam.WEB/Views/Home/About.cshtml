@@ -1,7 +1,38 @@
 ﻿@{
-    ViewBag.Title = "About";
+    Layout = null;
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@{
+    var _count = ViewBag.dataCount;
+    var _lstData = ViewBag.lstData;
+}
 
-<p>Use this area to provide additional information.</p>
+<script>
+    var dataseting = {};
+    dataseting.count = @_count;
+    dataseting.lstData = [
+        {ID:'a',Name:'Ten a'},
+        {ID:'b',Name:'Ten b'}
+    ];
+</script>
+
+load view angularjs about
+<br />
+<a href="/Admin/index/#/singlepage2">Qua Page SinglePage2</a>
+
+<div>
+    <input id="txtdata" type="text" ng-model="ObjOrder.IOrderrCode" />
+    <br />
+    <table>
+        <thead>
+        <td>A</td>
+        <td>B</td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in dataseting.lstData">
+                <td>{{item.ID}}</td>
+                <td>{{item.Name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button ng-click="btnSaveData.OnClick()">Save</button>
+</div>

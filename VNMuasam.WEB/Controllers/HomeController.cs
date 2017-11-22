@@ -14,9 +14,17 @@ namespace VNMuasam.WEB.Controllers
         public HomeController(IUserService UserService)
         {
             _UserService = UserService;
-        }
+        } 
 
         public ActionResult Index()
+        {
+            if (Global.IsMobileMode())
+            {
+                return View("Index.Mobile");
+            }
+            return View("Index");
+        }
+        public ActionResult Index_()
         {
             ViewBag.LstUser = _UserService.List();
             return View();

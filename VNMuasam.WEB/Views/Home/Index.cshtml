@@ -1,11 +1,33 @@
-﻿@using VNMuasam.Business.DTO;
-    @{
-        ViewBag.Title = "Home Page";
-        var LstUser = (List<UserRes>)ViewBag.LstUser;
-    }
-<ul>
-    @foreach (var item in LstUser.Where(x=>x.Username!=null))
-    {
-        <li>@item.Username - @item.FullName</li>
-    }
-</ul>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+<div class="main-layout" style="min-height:750px">
+    <div class="mod-banner" id="sys_mod_banner">
+        <div class="clearfix"> 
+            @Html.Partial("~/Views/Shared/Home/_Banner.cshtml")
+            <div class="make-right">
+                <a class="sys_banner_top" data-id="2101" data-position="1" href="https://nemo.vn/cap-chong-gu" target="_blank">
+                    <img src="https://static11.muachungcdn.com/thumb_wl,100/300/i:plaza/product/product/-0-capchongu_300x439-150840506788330/cap-chong-gu.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 
+
+@section jsScript{ 
+    <script type="text/javascript">
+        var swiper = new Swiper('.swiper-container', {
+            // Enable lazy loading 
+            lazy: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
+    </script>
+}
