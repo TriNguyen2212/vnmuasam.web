@@ -1,0 +1,33 @@
+﻿<ul ng-if="pager.Pages.length" class="pagination">
+    <li ng-class="{disabled:pager.CurrentPage === 1}">
+        <a ng-click="Exec(1)">
+            <i class="fa fa-fast-backward" aria-hidden="true"></i>
+        </a>
+    </li>
+    <li ng-class="{disabled:pager.CurrentPage === 1}">
+        <a ng-click="Exec(pager.CurrentPage - 1)">
+            <i class="fa fa-step-backward" aria-hidden="true"></i>
+        </a>
+    </li>
+    <li ng-repeat="page in pager.Pages" ng-class="{active:pager.CurrentPage === page}" style="cursor:pointer;">
+        <a ng-click="Exec(page)">{{page}}</a>
+    </li>
+    <li ng-class="{disabled:pager.CurrentPage === pager.TotalPages}">
+        <a ng-click="Exec(pager.CurrentPage + 1)">
+            <i class="fa fa-step-forward" aria-hidden="true"></i>
+        </a>
+    </li>
+    <li ng-class="{disabled:pager.CurrentPage === pager.TotalPages}">
+        <a ng-click="Exec(pager.TotalPages)">
+            <i class="fa fa-fast-forward" aria-hidden="true"></i>
+        </a>
+    </li>
+    <li ng-hide="pager.IsHideInfo">
+        <span>
+            {{(pager.EndIndex - pager.StartIndex) + 1}} dòng trên trang {{pager.CurrentPage}}/{{pager.TotalPages}}
+        </span>
+    </li>
+</ul>
+<!--<br />
+<br />
+pager : {{pager}}-->

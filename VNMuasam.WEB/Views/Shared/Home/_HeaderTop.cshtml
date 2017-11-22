@@ -1,0 +1,70 @@
+﻿
+<div class="header-top">
+    <div class="container clearfix">
+        <div class="top-right-action make-right">
+            <div class="tr-wrapper wrap-cskh make-right">
+                <div class="tr-show-val val-notify">
+                    <span class="lbl-show-notify fc-orange6 tt-u fw-rbb fs-11"><i class="icons iCall mr-10"></i>Chăm sóc khách hàng</span> <span class="count-notify"> <i class="icons iconArrowD"></i></span>
+                </div>
+                <div class="tr-dropdown dropdown-notify">
+                    <div class="inner-dropdown ta-c">
+                        <div class="cskh-t mb-10">
+                            <img src="~/assets/images/nemo/duck.png" alt="CSKH" class="mb-5" />
+                            <div class="fs-12 fc-gray6">Số điện thoại tư vấn sản phẩm</div>
+                            <div class="fs-16 fwb fc-black2 mt-2 mb-5">(024) 7304 11 22 </div>
+                            <div class="fs-12 fc-gray6">Số điện thoại chăm sóc khách hàng</div>
+                            <div class="fs-16 fwb fc-black2 mt-2 mb-5">1900636466</div>
+                            <div class="fs-12 fc-gray6">Email: <a href="mailto:lienhe@nemo.vn" class="fc-blue4">lienhe@nemo.vn</a></div>
+                        </div>
+                        <div class="cskh-b">
+                            <img src="~/assets/images/nemo/clock.png" alt="CSKH" class="mb-5" />
+                            <div class="fs-12 fc-gray6">Giờ làm việc</div>
+                            <div class="fs-12 fwb fc-black">Thứ 2 - Thứ 6: 8:30 - 18:00</div>
+                            <div class="fs-12 fwb fc-black">Thứ 7: 8:30 - 12:00</div>
+                            <div class="fs-12 fc-gray6 mt-10">Liên lạc ngoài giờ</div>
+                            <div class="fs-12 fwb fc-black">0162.838.1728</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tr-wrapper wrap-order-check make-right">
+                <a class="val-notify" href="#order_check_popup" id="open_order_check" data-toggle="modal" data-target="#order_check_popup">
+                    <i class="icons iCheck"></i><span class="lbl-show-notify">Kiểm tra đơn hàng</span> <span class="count-notify"></span>
+                </a>
+                <div id="order_check_popup" class="modal fade" role="dialog">
+                    <div class="modal-dialog"> 
+                        <!-- Modal content-->
+                        <div class="modal-content"> 
+                            <div class="modal-body"> 
+                                <div class="order_check_popup">
+                                    <div class="order_check_popup_wrap">
+                                        <div class="fs-14 fwb fc-gray5">
+                                            Kiếm tra đơn hàng 
+                                        </div>
+                                        <p class="sys_error_check_order" style="color: red;display: none"></p>
+                                        <input type="text" placeholder="Mã đơn hàng" class="mt-15 mb-15 sys_ck_txt" id="orders_head_id">
+                                        <input type="text" placeholder="Số điện thoại" class="mb-15 sys_ck_txt" id="customer_head_phone">
+                                        <div class="order_check_popup_btns">
+                                            <button class="btn-order-check" id="btn_check_order">Kiểm tra đơn hàng</button>
+                                            <button class="btn-cancel"  data-dismiss="modal">Bỏ qua</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tr-wrapper wrap-notify make-right">
+                <div class="tr-show-val val-notify">
+                    <i class="icons iNotify"></i><span class="lbl-show-notify">Thông báo mới</span> <span class="count-notify"></span>
+                </div>
+                <div class="tr-dropdown dropdown-notify">
+                    <div class="inner-dropdown" id="sys_show_notify">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

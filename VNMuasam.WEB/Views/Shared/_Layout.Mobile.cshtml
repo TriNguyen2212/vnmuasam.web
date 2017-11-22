@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Html.Partial("~/Views/Shared/Layout/_HeadMeta.cshtml")
+</head>
+<body ng-app="MyApp">
+    <div class="in-home-page container-page">
+        <div class="header">
+            <div class="row">
+                <a href="https://nemo.vn/" class="header__logo"><img src="/assets/images/nemo/logo.png" alt="Logo" style="height: 25px;"></a>
+                <div class="header__search">
+                    <input type="text" placeholder="Tìm kiếm..." class="header__search-input">
+                    <input type="submit" value="Tìm kiếm" class="header__search-submit">
+                    <a href="javascript:void(0)" class="header__search_close fs-15 make-right">Hủy</a>
+                    <a href="javascript:void(0)" class="header__search_clear" style="display: none;">
+                        <img src="/assets/Admin/img/clear.png" alt="Clear">
+                    </a>
+                    <div class="header__search_typing" style="display: none;">
+                        <div class="search_des fs-12">Sản phẩm tìm thấy :  <span class="fw-rbb"></span></div>
+                        <ul class="rs fw-rbb"></ul>
+                    </div>
+                </div>
+                <a href="https://nemo.vn/m/dang-nhap.html" class="header__signup fs-14 fc-black make-right">Đăng nhập</a>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/Home/_Banner.Mobile.cshtml")
+        @Html.Partial("~/Views/Shared/Home/_CategoryHead.Mobile.cshtml")
+        @RenderBody()
+        @Html.Partial("~/Views/Shared/Home/_Expand.Mobile.cshtml")
+        @Html.Partial("~/Views/Shared/Home/_MenuFooter.Mobile.cshtml")
+    </div>
+    @Html.Partial("_Footer.Mobile")
+    <div id="back2top" style="display: none;" title="Back to Top">Back to Top</div>
+    @Html.Partial("~/Views/Shared/Layout/_Script.cshtml")
+    @RenderSection("jsScript", false)
+</body>
+</html>

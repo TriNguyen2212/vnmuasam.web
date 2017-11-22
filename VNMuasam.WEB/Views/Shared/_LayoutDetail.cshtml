@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Html.Partial("~/Views/Shared/Layout/_HeadMeta.cshtml")
+</head>
+<body ng-app="MyApp">
+    <div class="container-page in-detail-page">
+        <div class="mp-pusher" id="mp-pusher">  
+            <div id="header">
+                <!--begin: #header -->
+                @Html.Partial("~/Views/Shared/Detail/_HeaderTop.cshtml")
+            </div><!--end: #Header--> 
+            <div id="wrapper">
+                <div id="page-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Footer")
+    @Html.Partial("~/Views/Shared/Layout/_Script.cshtml") 
+    @RenderSection("jsScript", false)
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<div class="modal fade PnUserSearchModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title"><strong>Tìm kiếm người dùng</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class="widget-body">
+                    <div class="clearfix well">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Mã nhân viên, tên nhân viên, chức vụ, phòng ban" type="text" ng-model="PnUserSearchModal.txtSearch.Text">
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table class="table table-bordered table-hover table-responsive">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center; width:50px;">
+                                        Mã nhân viên
+                                    </th>
+                                    <th style="text-align:center">
+                                        Tên nhân viên
+                                    </th>
+                                    <th style="text-align:center">
+                                        Chức vụ
+                                    </th>
+                                    <th style="text-align:center">
+                                        Phòng ban
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in PnUserSearchModal.LstOrder = (PnUserSearchModal.LstFilter = (PnUserSearchModal.Lst | filter : PnUserSearchModal.CustomFilter)  | orderBy: PnUserSearchModal.Sort.SortClient) | limitTo: PnUserSearchModal.Pager.PageSize: PnUserSearchModal.Pager.StartIndex">
+                                    <td class="col-md-2">
+                                         {{item.Username }}
+                                    </td>
+                                    <td class="col-md-3">
+                                        <a ng-click="PnUserSearchModal.ChooseUser(item)" href="javascript:void(0);">{{item.FullName}}</a>
+                                    </td>
+                                    <td class="col-md-3">{{item.PositionName}}</td>
+                                    <td class="col-md-3">{{item.DepartmentName}}</td>
+                                </tr>
+                                <tr ng-show="PnUserSearchModal.LstOrder.length == 0" style="text-align:center">
+                                    <td colspan="4">Không tìm thấy dữ liệu</td>
+                                </tr>
+                                <tr ng-hide="PnUserSearchModal.LstOrder.length == 0">
+                                    <td colspan="4">
+                                        <div style="text-align:right;padding:0px;">
+                                            <pagination-style1 total-items="PnUserSearchModal.LstFilter.length" pager="PnUserSearchModal.Pager" fn-call-back="PnUserSearchModal.btnSearch.OnClick(PageClicked)"></pagination-style1>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear:both;"></div>

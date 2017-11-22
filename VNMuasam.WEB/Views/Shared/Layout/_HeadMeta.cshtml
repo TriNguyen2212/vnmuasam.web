@@ -1,0 +1,34 @@
+﻿@using System.Configuration;
+@{
+    TempData["IsMobile"] = Global.IsMobileMode();
+    TempData["Eviroment"] = ConfigurationManager.AppSettings["Eviroment"];
+    TempData["IsShowMenu"] = false;
+    TempData["IsDetailPage"] = false;
+
+    string strControllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    string strActionName = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();
+    if (strControllerName == "Home")
+    {
+        TempData["IsShowMenu"] = true;
+    }
+
+    if (strControllerName == "Product")
+    {
+        TempData["IsDetailPage"] = true;
+    }
+}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="UTF-8">
+<title> VNmuasam - mua sắm thỏa thích</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<link href="~/assets/Admin/css/bootstrap.min.css" rel="stylesheet" />
+@if ((bool)TempData["IsMobile"] == true)
+{
+    <link href="~/assets/css/Site.Mobile.css" rel="stylesheet" />
+}
+else
+{
+    <link href="~/assets/css/Site.css" rel="stylesheet" />
+}
